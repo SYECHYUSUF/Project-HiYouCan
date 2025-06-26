@@ -11,7 +11,7 @@
             <NuxtLink to="/" class="flex items-center space-x-4">
             <!-- Logo -->
             
-            <img src="/images/logo3.png" alt="" class="w-30 h-auto">
+            <img src="/images/Logo3.png" alt="" class="w-30 h-auto">
             </NuxtLink>
             <ul v-show="!isMobileMenuOpen" class="hidden md:flex space-x-12 text-gray-500 font-medium text-lg">
             <ul class="grid grid-flow-col items-center gap-4">
