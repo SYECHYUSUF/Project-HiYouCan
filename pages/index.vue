@@ -13,7 +13,6 @@
                 </p>
                 <NuxtLink to="/product">
                     <WidgetsButton variant="primary" class="px-8 py-4 text-lg"> Cari Produk Kami
-                        <span class="ml-2">👉</span>
                     </WidgetsButton>
                 </NuxtLink>
             </div>
