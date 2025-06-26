@@ -24,8 +24,8 @@
                 <option value="name-desc">Nama: Z-A</option>
             </select>
 
-            <label class="flex items-center space-x-3 text-base text-gray-700 cursor-pointer">
-                <input type="checkbox" v-model="internalFilterAvailable" @change="emitChanges" class="form-checkbox h-5 w-5 text-pink-600 rounded-md focus:ring-pink-500 transition-colors duration-200">
+            <label class="flex items-center space-x-4 text-base text-gray-700 cursor-pointer p-2 rounded-lg hover:bg-gray-50 transition-colors duration-200">
+                <input type="checkbox" v-model="internalFilterAvailable" @change="emitChanges" class="form-checkbox h-5 w-5 text-pink-600 rounded-md focus:ring-pink-500 transition-colors duration-200 flex-shrink-0">
                 <span>Hanya Stok Tersedia</span>
             </label>
         </div>
@@ -35,7 +35,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 
-// Definisikan props untuk menerima nilai awal (jika ada) dan emit event
 const props = defineProps<{
     searchTerm?: string;
     sortBy?: string;
@@ -43,24 +42,19 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: 'update:searchTerm', value: string): void;
-  (e: 'update:sortBy', value: string): void;
-  (e: 'update:filterAvailable', value: boolean): void;
+    (e: 'update:searchTerm', value: string): void;
+    (e: 'update:sortBy', value: string): void;
+    (e: 'update:filterAvailable', value: boolean): void;
 }>();
 
-// State internal komponen
 const internalSearchTerm = ref(props.searchTerm || '');
 const internalSortBy = ref(props.sortBy || 'default');
 const internalFilterAvailable = ref(props.filterAvailable || false);
 
-// Watch props dari parent untuk memperbarui state internal
-// Ini penting jika parent mengubah nilai props setelah inisialisasi awal
 watch(() => props.searchTerm, (newValue) => { internalSearchTerm.value = newValue || ''; });
 watch(() => props.sortBy, (newValue) => { internalSortBy.value = newValue || 'default'; });
 watch(() => props.filterAvailable, (newValue) => { internalFilterAvailable.value = newValue || false; });
 
-
-// Fungsi untuk memancarkan perubahan ke komponen induk
 const emitChanges = () => {
     emit('update:searchTerm', internalSearchTerm.value);
     emit('update:sortBy', internalSortBy.value);
@@ -76,31 +70,37 @@ input[type="checkbox"].form-checkbox {
     margin: 0;
     font: inherit;
     color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
+    width: 1.25em;
+    height: 1.25em;
+    border: 2px solid #a0aec0;
+    border-radius: 0.25em;
     display: grid;
     place-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 input[type="checkbox"].form-checkbox::before {
     content: "";
-    width: 0.65em;
-    height: 0.65em;
+    width: 0.75em;
+    height: 0.75em;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: #fff;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 60%);
 }
 
 input[type="checkbox"].form-checkbox:checked {
     background-color: #db2777; /* pink-600 */
     border-color: #db2777;
-    color: #fff; /* checkmark color */
 }
 
 input[type="checkbox"].form-checkbox:checked::before {
     transform: scale(1);
+}
+
+input[type="checkbox"].form-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.5);
 }
 </style>
