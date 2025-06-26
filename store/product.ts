@@ -56,9 +56,9 @@ export const useProductStore = defineStore('product', {
         description: "Paket lengkap perawatan kulit wajah Hi.Youcan! untuk mencerahkan dan melembapkan kulit Anda.",
         price: 19990, 
         quantity: 10, 
-        imageUrl: "/images/face3.jpeg",
+        imageUrl: "/images/Face3.jpeg",
         galleryImages: [ // Menambahkan galeri gambar
-            "/images/face3.jpeg",
+            "/images/Face3.jpeg",
             "/images/Coming.jpeg",
             "/images/Coming.jpeg",
             "/images/Coming.jpeg"
