@@ -9,7 +9,7 @@
       ></div>
     </div>
 
-    <section class="pt-16 pb-32">
+    <section class="pt-4 pb-18">
       <div class="container mx-auto px-4 text-center max-w-4xl py-12">
         <h1
           class="text-5xl md:text-6xl font-extrabold leading-tight text-pink-700 mb-5 drop-shadow-sm"
@@ -31,7 +31,7 @@
       </div>
     </section>
 
-    <div class="overflow-hidden py-8">
+    <div class="overflow-hidden py-2">
       <div class="scrolling-wrapper">
         <div
           v-for="product in products"
@@ -78,6 +78,14 @@
         </div>
       </div>
     </div>
+
+    <footer
+      class="w-full bg-gray-50 py-6 mt-16 text-center text-gray-500 text-sm"
+    >
+      <div class="container mx-auto px-4">
+        © 2015 - 2025, PT. SyuhadaGlow. All Rights Reserved.
+      </div>
+    </footer>
   </div>
 </template>
 

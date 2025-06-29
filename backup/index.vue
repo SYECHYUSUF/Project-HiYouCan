@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="antialiased font-sans relative overflow-hidden">
         <div class="absolute inset-0 w-full h-full overflow-hidden -z-10">
             <div class="w-[500px] h-[500px] bg-pink-200 opacity-30 rounded-full blur-3xl absolute top-[-50px] left-[-150px]"></div>
@@ -254,4 +254,4 @@ html {
 .auto-scroll-gallery {
     scroll-snap-type: none; /* Nonaktifkan snap-scroll untuk auto-scroll halus */
 }
-</style>
+</style> -->
